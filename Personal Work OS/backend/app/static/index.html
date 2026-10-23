@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Alfred — Personal Work Assistant</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- DASHBOARD -->
+        <div id="dashboard-view">
+
+            <header>
+                <h1>Alfred</h1>
+                <p>Your personal work assistant</p>
+            </header>
+
+
+            <!-- PROJECTS -->
+
+            <section class="card" id="projects-section">
+
+                <div class="section-header">
+
+                    <div>
+                        <h2>Your Projects</h2>
+
+                        <p class="section-description">
+                            Select a project to view its work.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div id="projects-list">
+                    Loading projects...
+                </div>
+
+            </section>
+
+
+            <!-- WORK UPDATE -->
+
+            <section class="card" id="input-section">
+
+                <h2>Work Update</h2>
+
+                <textarea id="debrief-input"
+                          placeholder="What happened today?"></textarea>
+
+                <button id="analyze-button">
+                    Analyze Update
+                </button>
+
+            </section>
+
+
+            <!-- ANALYSIS -->
+
+            <section class="card hidden"
+                     id="analysis-section">
+
+                <h2>Alfred's Analysis</h2>
+
+
+                <div class="analysis-block">
+
+                    <h3>Summary</h3>
+
+                    <p id="summary"></p>
+
+                </div>
+
+
+                <div class="analysis-block">
+
+                    <h3>Project</h3>
+
+                    <select id="project-select"></select>
+
+                </div>
+
+
+                <div class="analysis-block">
+
+                    <h3>Extracted Items</h3>
+
+                    <div id="items-list"></div>
+
+                </div>
+
+
+                <button id="confirm-button">
+                    Confirm & Save
+                </button>
+
+            </section>
+
+
+            <p id="status-message"></p>
+
+        </div>
+
+
+        <!-- PROJECT DETAILS VIEW -->
+
+        <div id="project-view"
+             class="hidden">
+
+            <button id="back-button"
+                    class="back-button">
+                ← Back to Projects
+            </button>
+
+
+            <header class="project-header">
+
+                <h1 id="project-name">
+                    Project
+                </h1>
+
+                <p id="project-description"></p>
+
+            </header>
+
+
+            <!-- PROJECT INFO -->
+
+            <section class="card">
+
+                <h2>Project Overview</h2>
+
+
+                <div class="project-info">
+
+                    <div>
+
+                        <span class="info-label">
+                            Status
+                        </span>
+
+                        <span id="project-status"
+                              class="project-status"></span>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="info-label">
+                            Current Focus
+                        </span>
+
+                        <p id="project-focus">
+                            No current focus set.
+                        </p>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="info-label">
+                            Next Milestone
+                        </span>
+
+                        <p id="project-milestone">
+                            No milestone set.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- PROJECT DETAIL -->
+            <section class="card hidden" id="project-detail-section">
+
+                <button id="back-to-projects-button">
+                    ← Back to Projects
+                </button>
+
+                <div class="project-detail-header">
+                    <div>
+                        <h2 id="project-detail-name"></h2>
+                        <p id="project-detail-status"></p>
+                    </div>
+                </div>
+
+                <div class="analysis-block">
+
+                    <h3>Current Focus</h3>
+
+                    <p id="project-current-focus">
+                        No current focus set.
+                    </p>
+
+                </div>
+
+                <div class="analysis-block">
+
+                    <h3>Next Milestone</h3>
+
+                    <p id="project-next-milestone">
+                        No milestone set.
+                    </p>
+
+                </div>
+
+                <div class="analysis-block">
+
+                    <h3>Work Items</h3>
+
+                    <div id="project-work-items"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- WORK ITEMS -->
+
+            <section class="card">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>Project Memory</h2>
+
+                        <p class="section-description">
+                            Everything Alfred knows about this project.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div id="project-work-items">
+                    Loading project memory...
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
